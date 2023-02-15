@@ -9,6 +9,22 @@ The objectives of this library are:
 - Unify best practices for acquiring connections to the IBM i system
 - Avoid storage of authentication data in source code
 
+## Installation
+
+**Maven Users**
+add the following to your `pom.xml` file (substitute version number to the latest available):
+```xml
+<dependency>
+    <groupId>io.github.theprez</groupId>
+    <artifactId>dotenv-java-ibmi</artifactId>
+    <version>0.0.1</version>
+</dependency>
+```
+
+**Non-Maven Users**
+Download the `-with-dependencies.jar` file from [Maven Central](https://mvnrepository.com) and
+add to your classpath.
+
 ## Usage
 
 Access of `.env` data is done through use of the `Dotenv` object. The `Dotenv`
