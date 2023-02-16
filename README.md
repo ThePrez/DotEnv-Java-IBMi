@@ -12,6 +12,7 @@ The objectives of this library are:
 ## Installation
 
 **Maven Users**
+
 add the following to your `pom.xml` file (substitute version number to the latest available):
 ```xml
 <dependency>
@@ -22,6 +23,7 @@ add the following to your `pom.xml` file (substitute version number to the lates
 ```
 
 **Non-Maven Users**
+
 Download the `-with-dependencies.jar` file from [Maven Central](https://mvnrepository.com) and
 add to your classpath.
 
