@@ -5,7 +5,7 @@ This is a thin wrapper around the well-designed [dotenv-java](https://github.com
 project. 
 
 The objectives of this library are:
-- Make it easier to do cross-platform activities with a single codebase
+- Make it easier to do cross-platform activities with a single codebase (for instance, write/debug on your local PC, deploy to IBM i)
 - Unify best practices for acquiring connections to the IBM i system
 - Avoid storage of authentication data in source code
 
