@@ -32,7 +32,7 @@
         <dependency>
             <groupId>net.sf.jt400</groupId>
             <artifactId>jt400</artifactId>
-            <version>20.0.0-alpha-2</version>
+            <version>20.0.0</version>
         </dependency>
     </dependencies>
     <build>
