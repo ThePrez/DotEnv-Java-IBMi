@@ -18,7 +18,7 @@ add the following to your `pom.xml` file (substitute version number to the lates
 <dependency>
     <groupId>io.github.theprez</groupId>
     <artifactId>dotenv-java-ibmi</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 </dependency>
 ```
 
