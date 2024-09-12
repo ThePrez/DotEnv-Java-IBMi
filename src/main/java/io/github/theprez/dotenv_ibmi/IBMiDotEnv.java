@@ -1,6 +1,7 @@
 package io.github.theprez.dotenv_ibmi;
 
 import java.beans.PropertyVetoException;
+import java.io.File;
 import java.io.IOException;
 
 import com.github.theprez.jcmdutils.StringUtils;
@@ -8,6 +9,7 @@ import com.ibm.as400.access.AS400;
 import com.ibm.as400.access.AS400SecurityException;
 
 import io.github.cdimascio.dotenv.Dotenv;
+import io.github.cdimascio.dotenv.DotenvException;
 
 public class IBMiDotEnv {
     private static Dotenv s_dotEnv = null;
@@ -26,6 +28,20 @@ public class IBMiDotEnv {
         final String cwd = System.getProperty("user.dir", ".");
         final Dotenv dotenv = Dotenv.configure().directory(cwd).ignoreIfMalformed().ignoreIfMissing().load();
         return s_dotEnv = dotenv;
+    }
+
+    /**
+     * Load environment variables from the given configuration file
+     */
+    public static synchronized Dotenv loadDotEnv(File configFile) throws DotenvException {
+        final String parent = configFile.getParent();
+        final String baseName = configFile.getName();
+        if (StringUtils.isNonEmpty(parent) && StringUtils.isNonEmpty(baseName)) {
+            final Dotenv dotenv = Dotenv.configure().directory(parent).filename(baseName).ignoreIfMalformed().ignoreIfMissing().load();
+            return s_dotEnv = dotenv;
+        }
+        else
+            return s_dotEnv = null;
     }
 
     public static synchronized AS400 getCachedSystemConnection(final boolean _starCurrentIfPossible) throws IOException, AS400SecurityException {
